@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.version     = MyWay::VERSION
   s.authors     = ["D1plo1d"]
   s.summary     = "A sinatra skeleton for simpler websites."
+  s.date = Time.now.utc.strftime("%Y-%m-%d")
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
