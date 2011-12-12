@@ -1,26 +1,32 @@
-module MyWay
-  def self.bundler(root_path)
-    $my_way_root_path = root_path
-
-    # Standard MyWay Libraries
-    require "rubygems"
-    require "bundler"
-    require "yaml"
-    require "json"
+#TODO: automatically insert this file into /lib/my_way/config.rb with rake
+$my_way_root_path = File.join(File.expand_path(File.dirname(__FILE__)), "..", "..")
 
 
-    # reloader needs to be before bundler.. it's screwed up but it works
-    require 'sinatra/reloader' if ENV['RACK_ENV'].to_sym == :development
+# Standard My Way Libraries
+require "rubygems"
+require "bundler"
+require "yaml"
+require "json"
 
 
-    Bundler.require(:default, ENV['RACK_ENV'])
+# reloader needs to be before bundler.. it's screwed up but it works
+require 'sinatra/reloader' if ENV['RACK_ENV'].to_sym == :development
 
 
-    require "sinatra/assetpack"
-    require "padrino-helpers"
+Bundler.require(:default, ENV['RACK_ENV'])
 
 
-    require File.join(File.dirname(File.absolute_path(__FILE__)),"base.rb")
-    require File.join(root_path, "app", "app.rb")
-  end
+require "sinatra/assetpack"
+require "padrino-helpers"
+
+
+require "my_way/base"
+require File.join(root_path, "app", "app.rb")
+
+
+# Routing
+# TODO: make this somehow optional
+map "/" do
+  run App
 end
+
