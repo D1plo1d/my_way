@@ -21,12 +21,5 @@ require "padrino-helpers"
 
 
 require "my_way/base"
-require File.join(root_path, "app", "app.rb")
-
-
-# Routing
-# TODO: make this somehow optional
-map "/" do
-  run App
-end
+require File.join($my_way_root_path, "app", "app.rb")
 
