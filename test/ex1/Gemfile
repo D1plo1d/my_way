@@ -1,0 +1,18 @@
+source :rubygems
+
+# Standard Libraries
+gem "my_way", :require => false, :git => "git://github.com/D1plo1d/my_way.git"
+gem "sinatra-assetpack", :git => "https://github.com/rstacruz/sinatra-assetpack.git", :require => "sinatra/assetpack"
+
+# Local Dev
+group :development do
+  gem "sinatra-contrib", :require => false
+end
+
+
+# ---------------------------------------------------------------------------------------------------------------
+
+
+# App Specific Libraries
+# Put yours here!
+
