@@ -41,6 +41,7 @@ module MyWay
     # ======================================
 
     set :views, Proc.new { File.join(root, "app/views") }
+    set :public_directory, Proc.new { File.join(root, "app/public") }
 
 
     # static view folders helper
