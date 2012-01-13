@@ -2,7 +2,7 @@ module MyWay
   # Usage:
   #   map "my_app_directory", to: "/url/", via: self
   #
-  # Set :via to your bundler instance if your not using a standard rackup-style config.ru
+  # Set :via to your Rack builder instance if your not using a standard rackup-style config.ru
   #
   def MyWay.map (app_dir = "./app", opts = {to: "/", via: nil})
 

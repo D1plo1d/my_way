@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'open-uri'
 require '../../lib/my_way/builder.rb'
+#require "my_way"
 
 # Leave all the heavy lifting to My Way (sweet glorious automations!)
 MyWay.map "app", to: "/", via: self
