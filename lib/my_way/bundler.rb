@@ -17,10 +17,10 @@ module MyWay
     # Standard Libraries
 
     # Tip: to autoupgrade your MyWay install run bundle install twice
-    b.gem "my_way", require: false, git: "git://github.com/D1plo1d/my_way.git"
+    b.gem "my_way", :require => false, :git => "git://github.com/D1plo1d/my_way.git"
 
-    b.gem "sinatra-assetpack", require: "sinatra/assetpack",
-      git: "https://github.com/rstacruz/sinatra-assetpack.git"
+    b.gem "sinatra-assetpack", :require => "sinatra/assetpack",
+      :git => "https://github.com/rstacruz/sinatra-assetpack.git"
 
 
     # Local Dev
