@@ -4,7 +4,7 @@ module MyWay
   #
   # Set :via to your Rack builder instance if your not using a standard rackup-style config.ru
   #
-  def MyWay.map (app_dir = "./app", opts = {to: "/", via: nil})
+  def MyWay.map (app_dir = "./app", opts = {:to => "/", :via => nil})
 
     # Getting the method that called this one from the stack
     begin

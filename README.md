@@ -20,7 +20,7 @@ Installation
 ============
 
 *gem install my_way*
-Note: you need to install my_way before running your application. It will not automatically be installed by bundler.
+Note: you need to install my_way before running your application. It will not automatically be installed or updated by bundler.
 
 
 

@@ -1,4 +1,10 @@
+
 module MyWay
+  SRC_PATH = File.expand_path(File.dirname(__FILE__))
+  GEM_PATH = File.join( SRC_PATH, "..", "..")
+  require File.join(SRC_PATH, "version.rb")
+
+
   # Injects a default source (:rubygems) and a set of compatible libraries for MyWay into 
   # the gemfile.
   #
@@ -16,8 +22,9 @@ module MyWay
 
     # Standard Libraries
 
-    # Tip: to autoupgrade your MyWay install run bundle install twice
-    b.gem "my_way", :require => false, :git => "git://github.com/D1plo1d/my_way.git"
+    # requiring this instance of the my_way gem
+    b.gem "my_way", :require => false, :path => "#{GEM_PATH}"
+    #, "=#{MyWay.VERSION}"
 
     b.gem "sinatra-assetpack", :require => "sinatra/assetpack",
       :git => "https://github.com/rstacruz/sinatra-assetpack.git"
