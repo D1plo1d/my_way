@@ -1,4 +1,5 @@
 module MyWay
+
   # Usage:
   #   map "my_app_directory", to: "/url/", via: self
   #
@@ -6,10 +7,7 @@ module MyWay
   #
   def MyWay.map (app_dir = "./app", opts = {:to => "/", :via => nil})
 
-    # By assuming the file that called MyWay.config() was /config.ru
-    # we can determine the root directory of the app
-    root_path = MyWay.stack_path()
-    app_path = File.join root_path, app_dir
+    app_path = File.join MyWay.root, app_dir
 
 
     # Application Routes

@@ -20,6 +20,7 @@ require 'sinatra/reloader' if ENV['RACK_ENV'].nil? or ENV['RACK_ENV'].to_sym == 
 # My Way Files
 require File.join(dir, "version.rb")
 require File.join(dir, "util.rb")
+require File.join(dir, "class_methods.rb")
 require File.join(dir, "base.rb")
 require File.join(dir, "builder.rb")
 
