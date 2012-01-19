@@ -1,7 +1,17 @@
-require '../../lib/my_way/bundler.rb'
-#require "my_way"
-MyWay.gemfile_header bundler: self
+source :rubygems
+
+# Standard Libraries
+gem "my_way", :path => "../../"
+gem "sinatra-assetpack", :git => "https://github.com/rstacruz/sinatra-assetpack.git", :require => "sinatra/assetpack"
+
+# Local Dev
+group :development do
+  gem "sinatra-contrib", :require => false
+end
+
+
 # ---------------------------------------------------------------------------------------------------------------
 
 
+# App Specific Libraries
 
