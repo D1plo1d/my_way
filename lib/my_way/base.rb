@@ -2,6 +2,7 @@ module MyWay
   class Base < Sinatra::Base
 
     set :root, MyWay.stack_path()
+    puts "root set to #{settings.root}"
 
     register Sinatra::AssetPack
 
