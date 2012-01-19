@@ -1,7 +1,7 @@
 module MyWay
   class Base < Sinatra::Base
 
-    #set :root, $my_way_root_path
+    set :root, MyWay.stack_path()
 
     register Sinatra::AssetPack
 

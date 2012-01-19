@@ -6,38 +6,13 @@ module MyWay
   #
   def MyWay.map (app_dir = "./app", opts = {:to => "/", :via => nil})
 
-    # Getting the method that called this one from the stack
-    begin
-      raise 'foo'
-    rescue 
-      # By assuming the file that called MyWay.config() was /config.ru
-      # we can determine the root directory of the app
-      $my_way_root_path = File.expand_path(File.dirname($@[1]))
-      puts "Starting MyWay for #{$my_way_root_path}"
-    end
-    app_path = File.join $my_way_root_path, app_dir
+    # By assuming the file that called MyWay.config() was /config.ru
+    # we can determine the root directory of the app
+    root_path = MyWay.stack_path()
+    app_path = File.join root_path, app_dir
 
 
-
-    # Standard My Way Libraries
-    require "rubygems"
-    require "bundler"
-    require "yaml"
-    require "json"
-
-
-    # reloader needs to be before bundler.. it's screwed up but it works
-    require 'sinatra/reloader' if ENV['RACK_ENV'].nil? or ENV['RACK_ENV'].to_sym == :development
-
-
-    Bundler.require(:default, ENV['RACK_ENV'])
-
-
-    require "sinatra/assetpack"
-    require "padrino-helpers"
-
-
-    require "my_way/base"
+    # Application Routes
 
     load_route = Proc.new { |f| require f if File.exists?( f ) }
     # Loading simple app.rb routes
