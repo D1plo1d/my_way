@@ -1,8 +1,7 @@
-# Load up the app's non-bundler libaries
+# Load up the libraries
 require 'rubygems'
-require 'open-uri'
-require '../../lib/my_way/builder.rb'
-#require "my_way"
+require 'bundler'
+Bundler.require(:default, ENV['RACK_ENV'])
 
 # Leave all the heavy lifting to My Way (sweet glorious automations!)
 MyWay.map "app", to: "/", via: self
