@@ -1,7 +1,7 @@
 module MyWay
   class Base < Sinatra::Base
 
-    set :root, $my_way_root_path
+    #set :root, $my_way_root_path
 
     register Sinatra::AssetPack
 
@@ -40,9 +40,6 @@ module MyWay
     # view routing
     # ======================================
 
-    set :views, Proc.new { File.join(root, "app/views") }
-    set :public_directory, Proc.new { File.join(root, "app/public") }
-
 
     # static view folders helper
     # ======================================
@@ -57,7 +54,7 @@ module MyWay
         page = route.sub("/", "").gsub(/:[^\\]*/) { |p| params[p.sub(":", "").to_sym]}
 
         # displaying the page if the view exists
-        if (File.exists? "app/views/#{page}.haml")
+        if (File.exists? File.join(settings.root, "views", "#{page}.haml") )
           puts "statically routing #{page} via #{route}"
           haml page.to_sym
         else
