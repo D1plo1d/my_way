@@ -32,13 +32,15 @@ Gem::Specification.new do |s|
   s.add_dependency "less"
   s.add_dependency "haml"
   s.add_dependency "erubis"
-  s.add_dependency "therubyracer" # required for coffee-script
+  s.add_dependency "therubyracer-heroku" # required for coffee-script
   s.add_dependency "coffee-script"
 
 
   # Helpers
+  s.add_dependency "fileutils"
   s.add_dependency "padrino-helpers"
   s.add_dependency "sinatra-contrib"
   s.add_dependency "i18n"
+  s.add_dependency "activesupport", "~> 3.1.3"
 
 end
