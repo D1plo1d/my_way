@@ -8,6 +8,8 @@ module MyWay
   def MyWay.map (app_dir = "./app", opts = {:to => "/", :via => nil})
 
     app_path = File.join MyWay.root, app_dir
+    puts app_path
+    puts "*"*10
 
 
     # Application Routes
@@ -26,7 +28,7 @@ module MyWay
     # Routing the application
     builder = opts[:via]
     builder.map opts[:to] do
-      run App
+      run Kernel.const_get(File.basename(app_dir).classify)
     end
 
   end
