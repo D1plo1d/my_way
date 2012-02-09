@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["D1plo1d"]
   s.summary     = "A sinatra skeleton for simpler websites."
   s.date = Time.now.utc.strftime("%Y-%m-%d")
+  s.platform = Gem::Platform::RUBY
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -32,7 +33,15 @@ Gem::Specification.new do |s|
   s.add_dependency "less"
   s.add_dependency "haml"
   s.add_dependency "erubis"
-  s.add_dependency "therubyracer-heroku" # required for coffee-script
+
+  unless (RUBY_PLATFORM =~ /x86_64-darwin/).nil? # OS X / XCode 4.2.1 Fix (requires external installation of v8. incompatible with -heroku)
+    s.requirements << 'v8. For brew users type "brew install v8"'
+    s.add_dependency 'libv8'
+    s.add_dependency 'therubyracer'
+  else
+    s.add_dependency "therubyracer-heroku" # required for coffee-script
+  end
+
   s.add_dependency "coffee-script"
 
 
