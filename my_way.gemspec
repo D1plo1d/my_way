@@ -46,7 +46,6 @@ Gem::Specification.new do |s|
 
 
   # Helpers
-  s.add_dependency "fileutils"
   s.add_dependency "padrino-helpers"
   s.add_dependency "sinatra-contrib"
   s.add_dependency "i18n"
