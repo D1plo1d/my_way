@@ -49,6 +49,6 @@ Gem::Specification.new do |s|
   s.add_dependency "padrino-helpers"
   s.add_dependency "sinatra-contrib"
   s.add_dependency "i18n"
-  s.add_dependency "activesupport", "~> 3.1.3"
+  s.add_dependency "activesupport", ">= 3.1.3"
 
 end
