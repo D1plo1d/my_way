@@ -1,3 +1,7 @@
+HERE BE DRAGONS
+===============
+Please note I have stopped developing My Way in favour of a Padrino-based stack. This code is unmaintained. You have been warned.
+
 My Way
 ======
 
