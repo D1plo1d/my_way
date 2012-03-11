@@ -14,7 +14,7 @@ require "padrino-helpers"
 # Development Libraries (Gems)
 # reloader needs to be before bundler.. it's screwed up but it works (umm.. wut? nope? I'm calling bs on this.)
 # Bundler has already ran by this point. If this works that comment is total bs.
-require 'sinatra/reloader' if ENV['RACK_ENV'].nil? or ENV['RACK_ENV'].to_sym == :development
+#require 'sinatra/reloader' if ENV['RACK_ENV'].nil? or ENV['RACK_ENV'].to_sym == :development
 
 
 # My Way Files

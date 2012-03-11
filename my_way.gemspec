@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rack"
   s.add_dependency "sinatra"
   s.add_dependency "bundler"
-  s.add_dependency "sinatra-reloader"
+  # s.add_dependency "sinatra-reloader"
   s.add_dependency "sinatra-contrib"
 
 

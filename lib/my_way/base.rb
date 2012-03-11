@@ -12,10 +12,10 @@ module MyWay
       # src reloading
       # ======================================
       app.configure(:development) do
-        app.register Sinatra::Reloader
-        app.also_reload "lib/*.rb"
-        app.also_reload "app/models/*.rb"
-        app.also_reload "config/*"
+        #app.register Sinatra::Reloader
+        #app.also_reload "lib/*.rb"
+        #app.also_reload "app/models/*.rb"
+        #app.also_reload "config/*"
       end
 
 
